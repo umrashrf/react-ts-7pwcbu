@@ -1,3 +1,8 @@
 h1, p {
   font-family: Lato;
 }
+
+.half {
+  display: flex;
+  width: 50%;
+}
