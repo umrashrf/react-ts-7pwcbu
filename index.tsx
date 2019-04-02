@@ -1,4 +1,3 @@
-import uuid from 'uuid'
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import Grid from './Grid'
@@ -13,10 +12,10 @@ class App extends Component<AppProps, AppState> {
     return (
       <div>
         <div className='half'>
-          <Grid key={uuid.v4()} size='300' />
+          <Grid size='300' />
         </div>
         <div className='half'>
-          <Grid key={uuid.v4()} size='300' />
+          <Grid size='300' />
         </div>
       </div>
     );

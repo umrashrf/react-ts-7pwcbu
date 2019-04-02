@@ -1,4 +1,3 @@
-import uuid from 'uuid'
 import React, { Component } from 'react'
 import UnsplashImage from './UnsplashImage'
 
@@ -34,11 +33,10 @@ export default class Grid extends Component<GridProps, GridState> {
           />
         </p>
       ].concat(
-        Array.from(Array(9).keys()).map(() => {
+        Array.from(Array(12).keys()).map(() => {
           if (this.state.keyword 
           && this.state.keyword.length >= 3) {
             return <UnsplashImage 
-                    key={uuid.v4}
                     keyword={this.state.keyword} 
                     size={this.props.size} />
           }
