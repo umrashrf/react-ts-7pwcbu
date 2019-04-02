@@ -4,6 +4,10 @@ h1, p {
 
 .half {
   float: left;
-  width: 600px;
-  margin: 0 2px;
+  min-width: 600px;
+  width: 50%;
+}
+
+.inputWrapper {
+  text-align: center;
 }
