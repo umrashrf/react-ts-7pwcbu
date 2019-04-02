@@ -3,22 +3,16 @@ import UnsplashImage from './UnsplashImage'
 
 interface GridProps {
   size: string,
+  keyword: string,
 }
 interface GridState {
-  keyword?: string,
 }
 export default class Grid extends Component<GridProps, GridState> {
   size: string
-
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
+  keyword: string
+  
   search = (e) => {
-    this.setState({ 
-      keyword: e.target.value,
-    })
+    // change url
   }
 
   render() {
@@ -28,16 +22,16 @@ export default class Grid extends Component<GridProps, GridState> {
           <input 
             style={{width: '300px'}}
             placeholder='Type your keyword here (at least 3 characters)'
-            value={this.state.keyword}
+            value={this.props.keyword}
             onChange={this.search}
           />
         </p>
       ].concat(
         Array.from(Array(12).keys()).map(() => {
-          if (this.state.keyword 
-          && this.state.keyword.length >= 3) {
+          if (this.props.keyword 
+          && this.props.keyword.length >= 3) {
             return <UnsplashImage 
-                    keyword={this.state.keyword} 
+                    keyword={this.props.keyword} 
                     size={this.props.size} />
           }
         })
