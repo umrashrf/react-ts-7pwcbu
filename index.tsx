@@ -25,18 +25,22 @@ class App extends Component<AppProps, AppState> {
               </div>
             </div>
           )} />
-        <Route 
-          path="/:keyword1,:keyword2" 
-          render={(args) => (
-            <div>
-              <div className='half'>
-                <Grid keyword={args.match.params.keyword1} size="300" />
+        <div>
+          <Route 
+            path="/:keyword1" 
+            render={({ match }) => (
+             <div className='half'>
+                <Grid keyword={match.params.keyword1} size="300" />
               </div>
+            )} />
+          <Route 
+            path="/:keyword1/:keyword2" 
+            render={({ match }) => (
               <div className='half'>
-                <Grid keyword={args.match.params.keyword2} size="300" />
+                <Grid keyword={match.params.keyword2} size="300" />
               </div>
-            </div>
-          )} />
+            )} />
+          </div>
       </Router>
     );
   }
