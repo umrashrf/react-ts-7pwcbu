@@ -13,6 +13,19 @@ class App extends Component<AppProps, AppState> {
     return (
       <Router>
         <Route 
+          exact={true} 
+          path="/"
+          render={() => (
+            <div>
+              <div className='half'>
+                <Grid keyword="" size="300" />
+              </div>
+              <div className='half'>
+                <Grid keyword="" size="300" />
+              </div>
+            </div>
+          )} />
+        <Route 
           path="/:keyword1,:keyword2" 
           render={(args) => (
             <div>
