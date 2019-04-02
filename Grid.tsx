@@ -27,7 +27,7 @@ export default class Grid extends Component<GridProps, GridState> {
     const keyword = this.state.keyword || this.props.keyword
     return (
       [
-        <p className='inputWrapper'>
+        <p>
           <input 
             style={{width: '300px'}}
             placeholder='Type your keyword here (at least 3 characters)'
