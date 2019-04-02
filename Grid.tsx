@@ -7,11 +7,13 @@ interface GridProps {
 }
 interface GridState {
   keyword?: string,
+  editing?: boolean,
 }
 export default class Grid extends Component<GridProps, GridState> {
   size: string
   keyword: string
-  
+  editing: boolean
+
   constructor(props) {
     super(props)
     this.state = {}
@@ -19,12 +21,16 @@ export default class Grid extends Component<GridProps, GridState> {
 
   search = (e) => {
     this.setState({ 
+      editing: true,
       keyword: e.target.value,
     })
   }
 
   render() {
-    const keyword = this.state.keyword || this.props.keyword
+    let keyword = this.state.keyword || this.props.keyword
+    if (this.state.editing) {
+      keyword = this.state.keyword
+    }
     return (
       [
         <p>
